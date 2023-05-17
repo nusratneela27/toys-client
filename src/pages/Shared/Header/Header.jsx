@@ -20,9 +20,11 @@ const Header = () => {
 
                     <Nav className="justify-content-end flex-grow-1 pe-3 fw-semibold align-items-center">
                         <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/'>Home</NavLink>
-
+                        <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/allToys'>All Toys</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/myToys'>My Toys</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/addToys'>Add A Toy</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/blog'>Blog</NavLink>
-                        <Link to='/'>
+                        <Link to='/login'>
                             <Button variant="success" className='ms-5'>Login</Button>
                         </Link>
                     </Nav>

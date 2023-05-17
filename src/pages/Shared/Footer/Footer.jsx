@@ -7,7 +7,7 @@ import img1 from '../../../assets/footer/1.avif'
 import img2 from '../../../assets/footer/2.avif'
 import img3 from '../../../assets/footer/3.avif'
 import img4 from '../../../assets/footer/4.avif'
-
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -16,7 +16,9 @@ const Footer = () => {
                 <div className='row'>
                     <div className='col-md-4'>
                         <div className='d-flex align-items-center gap-2'>
-                            <img src={logo} height='40' width='40' alt="" />
+                            <Link to='/'>
+                                <img src={logo} height='40' width='40' alt="" />
+                            </Link>
                             <h1 className='fs-2 fw-bold '>Kidol</h1>
                         </div>
                         <p>Toys not only entertain,they also build minds,instil goals. A toy can keeps sadness away. It is not only meant for playing but also for enhancing knowledge and skills.</p>
@@ -59,7 +61,7 @@ const Footer = () => {
                 </div>
                 <hr />
                 <div className='d-flex justify-content-between'>
-                    <p>Copyright @2023 All Rights Reserved</p>
+                    <p>Copyright @2023</p>
                     <div className='d-flex col-md-2 gap-3'>
                         <p><FaFacebook ></FaFacebook></p>
                         <p><FaInstagram></FaInstagram></p>
