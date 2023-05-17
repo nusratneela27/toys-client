@@ -12,14 +12,14 @@ const SignUp = () => {
                         <Form className='mt-5 mb-5 p-5 border rounded bg-white shadow-lg'>
                             <h1 className='fw-bold'>Please Sign Up</h1>
 
-                            {/* <InputGroup className="mb-3">
+                            <InputGroup className="mb-3">
                                 <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
                                 <Form.Control
                                     placeholder="Username"
                                     aria-label="Username"
                                     aria-describedby="basic-addon1"
                                 />
-                            </InputGroup> */}
+                            </InputGroup>
 
                             <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
                                 <Form.Label className='fw-bold'>Name</Form.Label>
