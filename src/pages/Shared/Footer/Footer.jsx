@@ -19,7 +19,7 @@ const Footer = () => {
                             <img src={logo} height='40' width='40' alt="" />
                             <h1 className='fs-2 fw-bold '>Kidol</h1>
                         </div>
-                        <p>Toys not only entertain,they also build minds,instil goals. A toy can keeps sadness away. It is not only meant for playing but also for enhancing knowledge and skills</p>
+                        <p>Toys not only entertain,they also build minds,instil goals. A toy can keeps sadness away. It is not only meant for playing but also for enhancing knowledge and skills.</p>
                     </div>
                     <div className='col-md-2 '>
                         <h5 className='pb-4'>About</h5>
@@ -43,7 +43,7 @@ const Footer = () => {
                     </div>
                     <div className='col-md-4'>
                         <h5 className='pb-4'>Subscribe Newsletter</h5>
-                        <p>Subscribe our newsletter to get updates about our services and offers</p>
+                        <p>Subscribe our newsletter to get updates about our services and offers.</p>
                         <InputGroup className="mb-3">
                             <Form.Control
                                 placeholder="Email Address"
