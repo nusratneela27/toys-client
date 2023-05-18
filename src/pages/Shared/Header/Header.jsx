@@ -35,13 +35,21 @@ const Header = () => {
                     <Nav className="justify-content-end flex-grow-1 pe-3 fw-semibold align-items-center">
                         <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/'>Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/allToys'>All Toys</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/myToys'>My Toys</NavLink>
-                        <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/addToys'>Add A Toy</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/blog'>Blog</NavLink>
+
+                        {
+                            user ?
+                                <><NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/myToys'>My Toys</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? "nav-link active" : "nav-link default"} to='/addToys'>Add A Toy</NavLink>
+                                    <Button onClick={handleLogOut} variant="success" className='ms-5'>Logout</Button>
+                                </>
+                                :
+                                <Link to='/login'>
+                                    <Button variant="success" className='ms-5'>Login</Button>
+                                </Link>
+                        }
                         {
                             user &&
-
-
                             <OverlayTrigger
                                 placement="right"
                                 delay={{ show: 250, hide: 400 }}
@@ -50,16 +58,6 @@ const Header = () => {
                                 <img src={user.photoURL} alt="" className='border border-2 rounded-circle ms-5' height="70" weight="70" />
                             </OverlayTrigger>
 
-                        }
-                        {
-                            user ?
-                                <>
-                                    <Button onClick={handleLogOut} variant="success" className='ms-5'>Logout</Button>
-                                </>
-                                :
-                                <Link to='/login'>
-                                    <Button variant="success" className='ms-5'>Login</Button>
-                                </Link>
                         }
                     </Nav>
                 </Navbar.Collapse>
