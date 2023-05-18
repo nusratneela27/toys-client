@@ -55,7 +55,6 @@ const LatestNews = () => {
         <Container>
             <h1 className='text-center text-info fw-bold mt-5'>Latest News</h1>
             <p className='text-center fw-semibold'>OUR NEWS & EVENTS</p>
-            <hr />
             <Slider className='pb-5 mb-5' {...settings}>
 
 
