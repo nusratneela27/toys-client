@@ -1,25 +1,60 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
-import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const SignUp = () => {
+
+    const { createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
+
+    const handleSignUp = event => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        createUser(email, password)
+            .then(result => {
+                const createdUser = result.user;
+                console.log(createdUser);
+                updateUser(name, photo)
+                event.target.reset();
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser);
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
+
     return (
         <div className='loginBanner'>
             <Container>
                 <Row>
                     <Col md={6} className='pt-5 mt-5 ms-5'>
-                        <Form className='mt-5 mb-5 p-5 border rounded bg-white shadow-lg'>
+                        <Form onSubmit={handleSignUp} className='mt-5 mb-5 p-5 border rounded bg-secondary bg-opacity-25 shadow-lg'>
                             <h1 className='fw-bold'>Please Sign Up</h1>
 
-                            <InputGroup className="mb-3">
-                                <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                            {/* <InputGroup className="mb-3">
+                                <InputGroup.Text ><FaGithub></FaGithub></InputGroup.Text>
                                 <Form.Control
-                                    placeholder="Username"
+                                    placeholder="Enter Your Name"
                                     aria-label="Username"
                                     aria-describedby="basic-addon1"
                                 />
-                            </InputGroup>
+                            </InputGroup> */}
 
                             <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
                                 <Form.Label className='fw-bold'>Name</Form.Label>
@@ -46,10 +81,8 @@ const SignUp = () => {
                             <br />
 
                             <div>
-                                <Button variant="light" className='me-3'><FaGoogle className='me-2'></FaGoogle> Login with Google</Button>
-                                <Button variant="light"><FaGithub className='me-2'></FaGithub>Login with Github</Button>
+                                <Button onClick={handleGoogleSignIn} variant="light" className='me-3'><FaGoogle className='me-2'></FaGoogle> Login with Google</Button>
                             </div>
-
                             <br />
 
                             <Form.Text className="text-secondary">
