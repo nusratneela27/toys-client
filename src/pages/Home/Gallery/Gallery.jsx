@@ -11,7 +11,6 @@ import img6 from '../../../assets/gallery/6.avif'
 
 import { useEffect } from 'react';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const Gallery = () => {
 

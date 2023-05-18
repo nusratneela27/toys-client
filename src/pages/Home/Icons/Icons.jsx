@@ -8,18 +8,18 @@ import icons4 from '../../../assets/gallery/14.webp'
 const Icons = () => {
     return (
         <Container>
-            <Row className='text-center mt-5 pt-5 mb-5 pb-5'>
+            <Row className='text-center mt-5 pt-5 mb-5'>
                 <Col md={3}>
-                    <img src={icons1} alt="" />
+                    <img src={icons1} alt="" className='pb-5' />
                 </Col>
                 <Col md={3}>
-                    <img src={icons2} alt="" />
+                    <img src={icons2} alt="" className='pb-5' />
                 </Col>
                 <Col md={3}>
-                    <img src={icons3} alt="" />
+                    <img src={icons3} alt="" className='pb-5' />
                 </Col>
                 <Col md={3}>
-                    <img src={icons4} alt="" />
+                    <img src={icons4} alt="" className='pb-5' />
                 </Col>
             </Row>
         </Container>
