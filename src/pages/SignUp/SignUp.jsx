@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, InputGroup, Row } from 'react-bootstrap';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
 
     const { createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
+    const [error, setError] = useState('')
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -21,10 +23,22 @@ const SignUp = () => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 updateUser(name, photo)
+                setError('')
                 event.target.reset();
+                toast.success('Successfully SignUp', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                })
             })
             .catch(error => {
-                console.log(error);
+                console.log(error.message);
+                setError('The password is less than 6 characters')
             })
     }
 
@@ -33,6 +47,16 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser);
+                toast.success('Successfully SignUp With Google', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                })
             })
             .catch(error => {
                 console.log(error);
@@ -88,16 +112,14 @@ const SignUp = () => {
                             <Form.Text className="text-secondary">
                                 Already Have an Account? <Link to='/login' className='text-info fw-bold text-decoration-none'>Login</Link>
                             </Form.Text>
-                            <Form.Text className="text-success">
-
-                            </Form.Text>
                             <br />
-                            <Form.Text className="text-danger">
-
+                            <Form.Text className="text-danger fw-bold fs-5">
+                                {error}
                             </Form.Text>
                         </Form>
                     </Col>
                 </Row>
+                <ToastContainer></ToastContainer>
             </Container>
         </div>
     );
