@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 const ShopByCategory = () => {
@@ -33,12 +33,13 @@ const ShopByCategory = () => {
                                 {
                                     categoryData[0]?.toys?.map((category) => (
                                         <div key={category.id}>
-                                            <div>
-                                                <div className='p-4 mt-4 border rounded shadow'>
-                                                    <h2>{category.title}</h2>
-                                                    <p>{category.price}</p>
-                                                    <p>{category.rating}</p>
-                                                    <p>{category.description}</p>
+                                            <div className='d-flex p-4 mt-4 border rounded shadow'>
+                                                <img src={category.img} alt="" className='rounded me-4' height='300' width='400' />
+                                                <div className='my-auto'>
+                                                    <h5 className='fw-bold'>{category.title}</h5>
+                                                    <p>Price: ${category.price}</p>
+                                                    <p>Rating: {category.rating}</p>
+                                                    <Button variant='info'>View Details</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,9 +52,13 @@ const ShopByCategory = () => {
                                 {
                                     categoryData[1]?.toys?.map((category) => (
                                         <div key={category.id}>
-                                            <div>
-                                                <div className='p-4 mt-4 border rounded shadow'>
-                                                    <h2>{category.title}</h2>
+                                            <div className='d-flex p-4 mt-4 border rounded shadow'>
+                                                <img src={category.img} alt="" className='rounded me-4' height='300' width='400' />
+                                                <div className='my-auto'>
+                                                    <h5 className='fw-bold'>{category.title}</h5>
+                                                    <p>Price: ${category.price}</p>
+                                                    <p>Rating: {category.rating}</p>
+                                                    <Button variant='info'>View Details</Button>
                                                 </div>
                                             </div>
                                         </div>
@@ -66,9 +71,13 @@ const ShopByCategory = () => {
                                 {
                                     categoryData[2]?.toys?.map((category) => (
                                         <div key={category.id}>
-                                            <div>
-                                                <div className='p-4 mt-4 border rounded shadow'>
-                                                    <h2>{category.title}</h2>
+                                            <div className='d-flex p-4 mt-4 border rounded shadow'>
+                                                <img src={category.img} alt="" className='rounded me-4' height='300' width='400' />
+                                                <div className='my-auto'>
+                                                    <h5 className='fw-bold'>{category.title}</h5>
+                                                    <p>Price: ${category.price}</p>
+                                                    <p>Rating: {category.rating}</p>
+                                                    <Button variant='info'>View Details</Button>
                                                 </div>
                                             </div>
                                         </div>

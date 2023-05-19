@@ -5,19 +5,19 @@
         "toys": [
             {
                 "id": "11",
-                "img": "",
-                "title": "Cute teddy",
-                "price": "1000",
-                "rating": "4.5",
-                "quantity": "300 piece",
+                "img": "https://i.ibb.co/mqq702Z/teddy2.jpg",
+                "title": "Shreddy the teddy",
+                "price": "9.2",
+                "rating": "4.7",
+                "quantity": "350 piece",
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
             },
             {
                 "id": "12",
-                "img": "",
-                "title": "Big teddy",
-                "price": "1000",
-                "rating": "4.5",
+                "img": "https://i.ibb.co/Nttwwpf/teddy1.jpg",
+                "title": "Brown teddy",
+                "price": "12.3",
+                "rating": "4.8",
                 "quantity": "300 piece",
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
             }
@@ -29,20 +29,20 @@
         "toys": [
             {
                 "id": "21",
-                "img": "",
-                "title": "Cute dog",
-                "price": "1000",
+                "img": "https://i.ibb.co/3cnQyPY/dog1.jpg",
+                "title": "Small White dog",
+                "price": "7.2",
                 "rating": "4.5",
-                "quantity": "300 piece",
+                "quantity": "590 piece",
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
             },
             {
                 "id": "22",
-                "img": "",
-                "title": "Big dog",
-                "price": "1000",
-                "rating": "4.5",
-                "quantity": "300 piece",
+                "img": "https://i.ibb.co/7ptKfzR/dog2.jpg",
+                "title": "Stuffed dog",
+                "price": "8.2",
+                "rating": "4.6",
+                "quantity": "680 piece",
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
             }
         ]
@@ -53,18 +53,18 @@
         "toys": [
             {
                 "id": "31",
-                "img": "",
-                "title": "Cute cat",
-                "price": "1000",
-                "rating": "4.5",
-                "quantity": "300 piece",
+                "img": "https://i.ibb.co/DMZF18h/cat1.jpg",
+                "title": "Toffe soft cat",
+                "price": "9.4",
+                "rating": "4.2",
+                "quantity": "230 piece",
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
             },
             {
                 "id": "32",
-                "img": "",
-                "title": "Big cat",
-                "price": "1000",
+                "img": "https://i.ibb.co/6XPn1qp/cat2.jpg",
+                "title": "Caramel plush cat",
+                "price": "8.9",
                 "rating": "4.5",
                 "quantity": "300 piece",
                 "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
