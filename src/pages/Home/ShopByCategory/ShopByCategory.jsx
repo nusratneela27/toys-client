@@ -6,12 +6,11 @@ const ShopByCategory = () => {
     const [categoryData, setCategoryData] = useState([]);
 
     useEffect(() => {
-        fetch("/public/categoryToy.json")
+        fetch('http://localhost:5000/category')
             .then((response) => response.json())
             .then((data) => setCategoryData(data));
     }, []);
 
-    console.log(categoryData);
     return (
         <Container className='text-center mt-5 mb-5'>
             <h1 className='text-center text-info fw-bold mt-5'>Shop By Category</h1>
@@ -33,13 +32,19 @@ const ShopByCategory = () => {
                                 {
                                     categoryData[0]?.toys?.map((category) => (
                                         <div key={category.id}>
-                                            <div className='d-flex p-4 mt-4 border rounded shadow'>
-                                                <img src={category.img} alt="" className='rounded me-4' height='300' width='400' />
-                                                <div className='my-auto'>
-                                                    <h5 className='fw-bold'>{category.title}</h5>
-                                                    <p>Price: ${category.price}</p>
-                                                    <p>Rating: {category.rating}</p>
-                                                    <Button variant='info'>View Details</Button>
+                                            <div className="card mb-3 shadow mt-4">
+                                                <div className="row g-0">
+                                                    <div className="col-md-6">
+                                                        <img src={category.img} alt="" className="rounded m-3" height='200' width='300' />
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="card-body mt-4">
+                                                            <h5 className="card-title">{category.title}</h5>
+                                                            <p>Price: ${category.price}</p>
+                                                            <p>Rating: {category.rating}</p>
+                                                            <Button variant='info'>View Details</Button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -52,13 +57,19 @@ const ShopByCategory = () => {
                                 {
                                     categoryData[1]?.toys?.map((category) => (
                                         <div key={category.id}>
-                                            <div className='d-flex p-4 mt-4 border rounded shadow'>
-                                                <img src={category.img} alt="" className='rounded me-4' height='300' width='400' />
-                                                <div className='my-auto'>
-                                                    <h5 className='fw-bold'>{category.title}</h5>
-                                                    <p>Price: ${category.price}</p>
-                                                    <p>Rating: {category.rating}</p>
-                                                    <Button variant='info'>View Details</Button>
+                                            <div className="card mb-3 shadow mt-4">
+                                                <div className="row g-0">
+                                                    <div className="col-md-6">
+                                                        <img src={category.img} alt="" className="rounded m-3" height='200' width='300' />
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="card-body mt-4">
+                                                            <h5 className="card-title">{category.title}</h5>
+                                                            <p>Price: ${category.price}</p>
+                                                            <p>Rating: {category.rating}</p>
+                                                            <Button variant='info'>View Details</Button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,13 +82,19 @@ const ShopByCategory = () => {
                                 {
                                     categoryData[2]?.toys?.map((category) => (
                                         <div key={category.id}>
-                                            <div className='d-flex p-4 mt-4 border rounded shadow'>
-                                                <img src={category.img} alt="" className='rounded me-4' height='300' width='400' />
-                                                <div className='my-auto'>
-                                                    <h5 className='fw-bold'>{category.title}</h5>
-                                                    <p>Price: ${category.price}</p>
-                                                    <p>Rating: {category.rating}</p>
-                                                    <Button variant='info'>View Details</Button>
+                                            <div className="card mb-3 shadow mt-4">
+                                                <div className="row g-0">
+                                                    <div className="col-md-6">
+                                                        <img src={category.img} alt="" className="rounded m-3" height='200' width='300' />
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="card-body mt-4">
+                                                            <h5 className="card-title">{category.title}</h5>
+                                                            <p>Price: ${category.price}</p>
+                                                            <p>Rating: {category.rating}</p>
+                                                            <Button variant='info'>View Details</Button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
