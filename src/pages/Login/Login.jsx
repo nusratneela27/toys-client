@@ -1,15 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
-import { ToastContainer, toast } from 'react-toastify';
+// import { ToastContainer, toast } from 'react-toastify';
 import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const { signIn, signInWithGoogle } = useContext(AuthContext);
-    const [error, setError] = useState('')
+    const navigate = useNavigate();
+    const location = useLocation();
     useTitle('Login')
+    const [error, setError] = useState('')
+    const from = location.state?.from?.pathname || '/'
+
 
     const handleLogin = event => {
         event.preventDefault();
@@ -23,16 +27,17 @@ const Login = () => {
                 console.log(loggedUser);
                 setError('')
                 event.target.reset();
-                toast.success('Successfully Login', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                })
+                navigate(from, { replace: true })
+                // toast.success('Successfully Login', {
+                //     position: "top-center",
+                //     autoClose: 5000,
+                //     hideProgressBar: false,
+                //     closeOnClick: true,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                //     theme: "colored",
+                // })
             })
             .catch(error => {
                 console.log(error);
@@ -45,16 +50,17 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser);
-                toast.success('Successfully Login With Google', {
-                    position: "top-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                })
+                navigate(from, { replace: true })
+                // toast.success('Successfully Login With Google', {
+                //     position: "top-center",
+                //     autoClose: 5000,
+                //     hideProgressBar: false,
+                //     closeOnClick: true,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                //     theme: "colored",
+                // })
             })
             .catch(error => {
                 console.log(error);
@@ -99,7 +105,7 @@ const Login = () => {
                         </Form>
                     </Col>
                 </Row>
-                <ToastContainer></ToastContainer>
+                {/* <ToastContainer></ToastContainer> */}
             </Container>
         </div>
     );

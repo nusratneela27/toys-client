@@ -10,6 +10,7 @@ import TeddeyDetails from "../pages/ToyDetails/TeddeyDetails/TeddeyDetails";
 import CatDetails from "../pages/ToyDetails/CatDetails/CatDetails";
 import DogDetails from "../pages/ToyDetails/DogDetails/DogDetails";
 import AddToy from "../pages/AddToy/AddToy";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'teddy/:id',
-                element: <TeddeyDetails></TeddeyDetails>,
+                element: <PrivateRoute><TeddeyDetails></TeddeyDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/teddy/${params.id}`)
             },
             {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'addToy',
-                element: <AddToy></AddToy>,
+                element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
             },
             {
                 path: 'allToys',
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'blog',
-                element: <Blog></Blog>
+                element: <PrivateRoute><Blog></Blog></PrivateRoute>
             },
             {
                 path: 'login',
