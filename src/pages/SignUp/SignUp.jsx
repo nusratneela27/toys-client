@@ -73,15 +73,6 @@ const SignUp = () => {
                         <Form onSubmit={handleSignUp} className='mt-5 mb-5 p-5 border rounded bg-secondary bg-opacity-25 shadow-lg'>
                             <h1 className='fw-bold'>Please Sign Up</h1>
 
-                            {/* <InputGroup className="mb-3">
-                                <InputGroup.Text ><FaGithub></FaGithub></InputGroup.Text>
-                                <Form.Control
-                                    placeholder="Enter Your Name"
-                                    aria-label="Username"
-                                    aria-describedby="basic-addon1"
-                                />
-                            </InputGroup> */}
-
                             <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
                                 <Form.Label className='fw-bold'>Name</Form.Label>
                                 <Form.Control type="text" name='name' placeholder="Enter Your Name" required />
@@ -91,6 +82,7 @@ const SignUp = () => {
                                 <Form.Label className='fw-bold'>Photo URL</Form.Label>
                                 <Form.Control type="text" name='photo' placeholder="Photo URL" required />
                             </Form.Group>
+
                             <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
                                 <Form.Label className='fw-bold'>Email address</Form.Label>
                                 <Form.Control type="email" name='email' placeholder="Enter email" required />
