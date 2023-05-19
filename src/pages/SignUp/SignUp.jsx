@@ -4,11 +4,13 @@ import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { ToastContainer, toast } from 'react-toastify';
+import useTitle from '../../hooks/useTitle';
 
 const SignUp = () => {
 
     const { createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState('')
+    useTitle('Sign Up')
 
     const handleSignUp = event => {
         event.preventDefault();

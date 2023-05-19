@@ -6,8 +6,10 @@ import Icons from '../Icons/Icons';
 import LatestNews from '../LatestNews/LatestNews';
 import Question from '../Question/Question';
 import PhotoShot from '../PhotoShot/PhotoShot';
+import useTitle from '../../../hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>
