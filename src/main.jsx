@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'aos/dist/aos.css';
+import 'react-tabs/style/react-tabs.css';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'

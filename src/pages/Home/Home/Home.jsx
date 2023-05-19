@@ -7,6 +7,7 @@ import LatestNews from '../LatestNews/LatestNews';
 import Question from '../Question/Question';
 import PhotoShot from '../PhotoShot/PhotoShot';
 import useTitle from '../../../hooks/useTitle';
+import ShopByCategory from '../ShopByCategory/ShopByCategory';
 
 const Home = () => {
     useTitle('Home')
@@ -14,6 +15,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Gallery></Gallery>
+            <ShopByCategory></ShopByCategory>
             <Icons></Icons>
             <Question></Question>
             <PhotoShot></PhotoShot>
