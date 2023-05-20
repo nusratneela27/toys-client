@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, CloseButton } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const MyToysRow = ({ toy, handleDelete }) => {
     const { _id, photo, name, toyName, category, price, quantity } = toy;
@@ -18,7 +19,9 @@ const MyToysRow = ({ toy, handleDelete }) => {
             <td className='pt-3'>{price}</td>
             <td className='pt-3'>{quantity}</td>
             <td className='pt-3'>
-                <Button>Update</Button>
+                <Link to='/toyUpdate'>
+                    <Button>Update</Button>
+                </Link>
             </td>
         </tr>
     );

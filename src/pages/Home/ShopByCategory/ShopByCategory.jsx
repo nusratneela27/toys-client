@@ -9,7 +9,7 @@ const ShopByCategory = () => {
     const [card] = useState(2)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/category/${activeTab}`)
+        fetch(`https://toys-project-server.vercel.app/category/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setCategory(result);

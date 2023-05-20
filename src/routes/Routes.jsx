@@ -10,6 +10,7 @@ import AddToy from "../pages/AddToy/AddToy";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys/MyToys";
 import SingleDetails from "../pages/SingleDetails/SingleDetails";
+import UpdateToy from "../pages/MyToys/UpdateToy";
 
 const router = createBrowserRouter([
     {
@@ -24,11 +25,15 @@ const router = createBrowserRouter([
             {
                 path: 'details/:id',
                 element: <SingleDetails></SingleDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/allToys/${params.id}`)
+                loader: ({ params }) => fetch(`https://toys-project-server.vercel.app/allToys/${params.id}`)
             },
             {
                 path: 'addToy',
                 element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
+            },
+            {
+                path: 'toyUpdate',
+                element: <UpdateToy></UpdateToy>
             },
             {
                 path: 'allToys',

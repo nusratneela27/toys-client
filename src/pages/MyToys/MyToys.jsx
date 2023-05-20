@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Button, CloseButton, Container, Table } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProviders';
 import Swal from "sweetalert2";
@@ -12,7 +12,7 @@ const MyToys = () => {
     const [control, setControl] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myToys/${user?.email}`)
+        fetch(`https://toys-project-server.vercel.app/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyToys(data);
@@ -20,7 +20,7 @@ const MyToys = () => {
     }, [user, control])
 
     // const handleToyUpdate = (data) => {
-    //     fetch(`http://localhost:5000/updateToy/${data._id}`, {
+    //     fetch(`https://toys-project-server.vercel.app/updateToy/${data._id}`, {
     //         method: "PATCH",
     //         headers: { "Content-Type": "application/json" },
     //         body: JSON.stringify(data),
@@ -45,7 +45,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myToys/${id}`, {
+                fetch(`https://toys-project-server.vercel.app/myToys/${id}`, {
                     method: 'DELETE',
 
                 })
