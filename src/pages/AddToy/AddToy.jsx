@@ -69,7 +69,7 @@ const AddToy = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Name</Form.Label>
+                    <Form.Label className='fw-bold'>Toy Name</Form.Label>
                     <Form.Control type="text" name='toyName' placeholder="Enter toy Name" required />
                 </Form.Group>
 

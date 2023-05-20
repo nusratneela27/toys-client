@@ -2,11 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, CloseButton, Container, Table } from 'react-bootstrap';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProviders';
+import UpdateToyModal from './UpdateToyModal';
 
 const MyToys = () => {
     useTitle('My toys')
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
+    const [modalShow, setModalShow] = React.useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${user?.email}`)
@@ -15,6 +17,11 @@ const MyToys = () => {
                 setMyToys(data);
             })
     }, [user])
+
+    const handleToyUpdate = (data) => {
+        console.log(data);
+    }
+
     return (
         <Container>
             <h1 className='text-center text-info fw-bold mt-5 mb-5'>My Toys</h1>
@@ -33,7 +40,7 @@ const MyToys = () => {
                 </thead>
                 <tbody className='text-center'>
                     {
-                        myToys?.map((toys, index) => (
+                        myToys?.map((toys) => (
                             <tr key={toys._id}>
                                 <td>
                                     <CloseButton></CloseButton>
@@ -44,9 +51,16 @@ const MyToys = () => {
                                 <td>{toys.price}</td>
                                 <td>{toys.quantity}</td>
                                 <td>
-                                    <Button variant='info'>
+                                    <Button variant="primary" onClick={() => setModalShow(true)}>
                                         Update
                                     </Button>
+
+                                    <UpdateToyModal
+                                        show={modalShow}
+                                        onHide={() => setModalShow(false)}
+                                        toys={toys}
+                                        handleToyUpdate={handleToyUpdate}
+                                    />
                                 </td>
                             </tr>
                         ))
