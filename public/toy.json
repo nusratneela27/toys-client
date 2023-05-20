@@ -1,38 +1,27 @@
 [
     {
-        "toy_id": "01",
-        "img": "",
-        "title": "",
-        "price": "1000",
-        "rating": "4.5",
-        "quantity": "300 piece",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+        "_id": "6467decf96d67b9bdcbe25ee",
+        "name": "rubel",
+        "sallerName": "rubelll",
+        "email": "abc@gmail.com",
+        "category": "Supercars",
+        "price": "1111",
+        "ratings": "2",
+        "quantity": "1",
+        "imgUrl": "skdfjkjsklf",
+        "description": "sfsdfsf",
+        "createdAt": "2023-05-19T20:40:47.140Z"
     },
     {
-        "toy_id": "01",
-        "img": "",
-        "title": "",
-        "price": "1000",
-        "rating": "4.5",
-        "quantity": "300 piece",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
-    },
-    {
-        "toy_id": "01",
-        "img": "",
-        "title": "",
-        "price": "1000",
-        "rating": "4.5",
-        "quantity": "300 piece",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
-    },
-    {
-        "toy_id": "01",
-        "img": "",
-        "title": "",
-        "price": "1000",
-        "rating": "4.5",
-        "quantity": "300 piece",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!"
+        "id": "6467ca3ac44ca1c3b8fc1c84",
+        "photo": "https://i.ibb.co/Zz37V89/kim-bomi.jpg",
+        "toyName": "tawt",
+        "email": "nusratneela16@gmail.com",
+        "name": "Nusrat neela",
+        "category": "cat",
+        "price": "23424",
+        "rating": "dgs",
+        "quantity": "20440",
+        "detail": "sgfs"
     }
 ]

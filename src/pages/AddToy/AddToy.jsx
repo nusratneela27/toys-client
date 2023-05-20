@@ -3,8 +3,10 @@ import { Button, Container } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../providers/AuthProviders';
 import Swal from "sweetalert2";
+import useTitle from '../../hooks/useTitle';
 
 const AddToy = () => {
+    useTitle('Add Toy')
     const { user } = useContext(AuthContext);
 
     const handleAddToy = event => {
@@ -47,9 +49,9 @@ const AddToy = () => {
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success',
-                        text: 'Added Successfully',
+                        text: 'Toy Added Successfully',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+                        confirmButtonText: 'ok'
                     })
                 }
             })
