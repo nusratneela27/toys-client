@@ -1,53 +1,43 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Button, CloseButton, Container, Table } from 'react-bootstrap';
 import useTitle from '../../hooks/useTitle';
-import { Button, Container, Form, Table } from 'react-bootstrap';
+import { AuthContext } from '../../providers/AuthProviders';
 
-const AllToys = () => {
-    useTitle('All Toys')
-    const [allToys, setAllToys] = useState([]);
-    const [searchText, setSearchText] = useState("");
+const MyToys = () => {
+    useTitle('My toys')
+    const { user } = useContext(AuthContext);
+    const [myToys, setMyToys] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allToys')
+        fetch(`http://localhost:5000/myToys/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setAllToys(data);
+                setMyToys(data);
             })
-    }, [])
-
-    const handleSearch = () => {
-        fetch(`http://localhost:5000/toyNameBySearch/${searchText}`)
-            .then(res => res.json())
-            .then(data => {
-                setAllToys(data);
-            })
-    }
-
+    }, [user])
     return (
         <Container>
-            <h1 className='text-center text-info fw-bold mt-5 mb-5'>All Toys</h1>
-            <div className='text-center mb-5'>
-                <input onChange={(e) => setSearchText(e.target.value)} type="text" name="text" id="" placeholder='search' className='rounded py-1 me-4' />
-                <Button onClick={handleSearch}>Search</Button>
-            </div>
+            <h1 className='text-center text-info fw-bold mt-5 mb-5'>My Toys</h1>
+
             <Table striped bordered hover className='mb-5'>
                 <thead>
                     <tr className='text-center'>
-                        <th>#</th>
+                        <th>Delete</th>
                         <th>Seller</th>
                         <th>Toy Name</th>
                         <th>Category</th>
                         <th>price</th>
                         <th>Quantity</th>
-                        <th>Details</th>
+                        <th>Update</th>
                     </tr>
                 </thead>
                 <tbody className='text-center'>
-
                     {
-                        allToys?.map((toys, index) => (
+                        myToys?.map((toys, index) => (
                             <tr key={toys._id}>
-                                <td>{index + 1}</td>
+                                <td>
+                                    <CloseButton></CloseButton>
+                                </td>
                                 <td>{toys.name}</td>
                                 <td>{toys.toyName}</td>
                                 <td>{toys.category}</td>
@@ -55,7 +45,7 @@ const AllToys = () => {
                                 <td>{toys.quantity}</td>
                                 <td>
                                     <Button variant='info'>
-                                        View Details
+                                        Update
                                     </Button>
                                 </td>
                             </tr>
@@ -67,4 +57,4 @@ const AllToys = () => {
     );
 };
 
-export default AllToys;
+export default MyToys;
