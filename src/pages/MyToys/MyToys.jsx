@@ -3,12 +3,14 @@ import { Button, CloseButton, Container, Table } from 'react-bootstrap';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProviders';
 import UpdateToyModal from './UpdateToyModal';
+import Swal from "sweetalert2";
 
 const MyToys = () => {
     useTitle('My toys')
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
     const [modalShow, setModalShow] = React.useState(false);
+    const [control, setControl] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myToys/${user?.email}`)
@@ -16,11 +18,54 @@ const MyToys = () => {
             .then(data => {
                 setMyToys(data);
             })
-    }, [user])
+    }, [user, control])
 
-    const handleToyUpdate = (data) => {
-        console.log(data);
-    }
+    // const handleToyUpdate = (data) => {
+    //     fetch(`http://localhost:5000/updateToy/${data._id}`, {
+    //         method: "PATCH",
+    //         headers: { "Content-Type": "application/json" },
+    //         body: JSON.stringify(data),
+    //     })
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             if (result.modifiedCount > 0) {
+    //                 setControl(!control);
+    //             }
+    //             console.log(result);
+    //         });
+    // };
+
+    // const handleDelete = id => {
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //     })
+    //         .then((result) => {
+    //             if (result.isConfirmed) {
+    //                 fetch(`http://localhost:5000/myToys/${id}`, {
+    //                     method: 'DELETE'
+    //                 })
+    //                     .then(res => res.json())
+    //                     .then(data => {
+    //                         console.log(data);
+    //                         if (data.deletedCount > 0) {
+    //                             Swal.fire(
+    //                                 'Deleted!',
+    //                                 'Your Booking has been deleted.',
+    //                                 'success'
+    //                             )
+    //                             const remaining = myToys.filter(booking => booking._id !== id);
+    //                             setMyToys(remaining)
+    //                         }
+    //                     })
+    //             }
+    //         })
+    // }
 
     return (
         <Container>

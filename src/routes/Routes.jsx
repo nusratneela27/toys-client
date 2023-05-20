@@ -6,12 +6,10 @@ import Blog from "../pages/Blog/Blog";
 import AllToys from "../pages/AllToys/AllToys";
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
-import TeddeyDetails from "../pages/ToyDetails/TeddeyDetails/TeddeyDetails";
-import CatDetails from "../pages/ToyDetails/CatDetails/CatDetails";
-import DogDetails from "../pages/ToyDetails/DogDetails/DogDetails";
 import AddToy from "../pages/AddToy/AddToy";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys/MyToys";
+import SingleDetails from "../pages/SingleDetails/SingleDetails";
 
 const router = createBrowserRouter([
     {
@@ -24,19 +22,9 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: 'teddy/:id',
-                element: <PrivateRoute><TeddeyDetails></TeddeyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/teddy/${params.id}`)
-            },
-            {
-                path: 'cat/:id',
-                element: <CatDetails></CatDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/cat/${params.id}`)
-            },
-            {
-                path: 'dog/:id',
-                element: <DogDetails></DogDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/dog/${params.id}`)
+                path: 'details/:id',
+                element: <SingleDetails></SingleDetails>,
+                loader: ({ params }) => fetch(`http://localhost:5000/allToys/${params.id}`)
             },
             {
                 path: 'addToy',
@@ -48,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'myToys',
-                element: <MyToys></MyToys>
+                element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
             },
             {
                 path: 'blog',

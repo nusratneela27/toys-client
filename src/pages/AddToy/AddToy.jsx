@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Container } from 'react-bootstrap';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../providers/AuthProviders';
 import Swal from "sweetalert2";
@@ -58,65 +58,74 @@ const AddToy = () => {
 
     }
     return (
-        <Container>
-            <h2>Add a toy</h2>
+        <div className='addToyBanner'>
+            <Container className='pb-5 pt-5'>
+                <Row>
+                    <Col md={6}>
+                        <Form onSubmit={handleAddToy} className='bg-info bg-opacity-25 rounded p-4 mt-5 mb-5'>
 
-            <Form onSubmit={handleAddToy}>
+                            <div className='d-flex justify-content-center gap-5 '>
+                                <div>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label className='fw-bold'>Photo URL</Form.Label>
+                                        <Form.Control type="text" name='photo' placeholder="Photo URL" required />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Photo URL</Form.Label>
-                    <Form.Control type="text" name='photo' placeholder="Photo URL" required />
-                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label className='fw-bold'>Toy Name</Form.Label>
+                                        <Form.Control type="text" name='toyName' placeholder="Enter toy Name" required />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Toy Name</Form.Label>
-                    <Form.Control type="text" name='toyName' placeholder="Enter toy Name" required />
-                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label className='fw-bold'>Name</Form.Label>
+                                        <Form.Control type="text" name='name' defaultValue={user?.displayName} placeholder="Enter Your Name" required />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3 mt-4" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Name</Form.Label>
-                    <Form.Control type="text" name='name' defaultValue={user?.displayName} placeholder="Enter Your Name" required />
-                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                                        <Form.Label className='fw-bold'>Email address</Form.Label>
+                                        <Form.Control type="email" name="email" defaultValue={user?.email} placeholder="name@example.com" />
+                                    </Form.Group>
+                                </div>
 
-                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" defaultValue={user?.email} placeholder="name@example.com" />
-                </Form.Group>
+                                <div>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label className='fw-bold'>Price</Form.Label>
+                                        <Form.Control type="text" name='price' placeholder="price" required />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                    <Form.Select aria-label="Default select example" name='category'>
-                        <option>category</option>
-                        <option value="teddy">Teddy</option>
-                        <option value="cat">Cat</option>
-                        <option value="Dog">Dog</option>
-                    </Form.Select>
-                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label className='fw-bold'>Rating</Form.Label>
+                                        <Form.Control type="text" name='rating' placeholder="Rating" />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Price</Form.Label>
-                    <Form.Control type="text" name='price' placeholder="price" required />
-                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                                        <Form.Label className='fw-bold'>Available quantity</Form.Label>
+                                        <Form.Control type="text" name='quantity' placeholder="quantity" />
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Rating</Form.Label>
-                    <Form.Control type="text" name='rating' placeholder="Rating" />
-                </Form.Group>
+                                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                        <Form.Select aria-label="Default select example" name='category' required>
+                                            <option value="teddy">Teddy</option>
+                                            <option value="cat">Cat</option>
+                                            <option value="dog">Dog</option>
+                                        </Form.Select>
+                                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Available quantity</Form.Label>
-                    <Form.Control type="text" name='quantity' placeholder="quantity" />
-                </Form.Group>
+                                </div>
+                            </div>
+                            <Form.Group className="mb-3" controlId="formBasicEmail">
+                                <Form.Label className='fw-bold'>Description</Form.Label>
+                                <Form.Control type="text" name='detail' placeholder="Description" as="textarea" rows={3} />
+                            </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className='fw-bold'>Description</Form.Label>
-                    <Form.Control type="text" name='detail' placeholder="Description" />
-                </Form.Group>
-
-                <Button variant="info" type="submit" className='mb-3'>
-                    Add A Toy
-                </Button>
-            </Form>
-        </Container>
+                            <Button variant="info" type="submit" className='mb-3'>
+                                Add A Toy
+                            </Button>
+                        </Form>
+                    </Col>
+                </Row>
+            </Container>
+        </div>
     );
 };
 

@@ -1,27 +1,34 @@
-import React, { useContext } from 'react';
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from 'react-bootstrap/Form';
+import { useForm } from "react-hook-form";
 
 const UpdateToyModal = (props) => {
 
-    const handleToyUpdate = event => {
-        event.preventDefault();
-        const form = event.target;
-        const price = form.price.value;
-        const quantity = form.quantity.value;
-        const detail = form.detail.value;
-        const _id = form._id.value;
-        const updateToy = {
-            price: price,
-            quantity: quantity,
-            detail: detail,
-            _id: _id
-        }
+    const {
+        register,
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm();
 
-        console.log(updateToy);
+    const { handleToyUpdate } = props;
 
-    }
+    // const handle = (event) => {
+    //     event.preventDefault();
+    //     const form = event.target;
+    //     const price = form.price.value;
+    //     const quantity = form.quantity.value;
+    //     const detail = form.detail.value;
+    //     const _id = form._id.value;
+    //     const updateToy = {
+    //         price: price,
+    //         quantity: quantity,
+    //         detail: detail,
+    //         _id: _id
+    //     }
+    //     console.log(updateToy);
+    // }
 
     return (
         <Modal
@@ -36,7 +43,55 @@ const UpdateToyModal = (props) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit={handleToyUpdate}>
+
+
+                <form
+                    className="container text-center"
+                    onSubmit={handleSubmit(handleToyUpdate)}
+                >
+                    {errors.exampleRequired && <span>This field is required</span>}
+                    <input
+                        className="text-input"
+                        {...register("price")}
+                        placeholder="price"
+                        defaultValue={props?.toys?.price}
+                    />
+                    <input
+                        className="text-input"
+                        {...register("quantity")}
+                        placeholder="quantity"
+                        defaultValue={props?.toys?.quantity}
+                    />
+                    <input
+                        className="text-input"
+                        {...register("detail")}
+                        placeholder="detail"
+                        defaultValue={props?.toys?.detail}
+                    />
+                    <input
+                        className="text-input d-none"
+                        {...register("_id")}
+                        value={props?.toys?._id}
+                    />
+
+                    <input className="submit-btn" value="Update Job" type="submit" />
+                </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* <Form onSubmit={handle(handleToyUpdate)}>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label className='fw-bold'>Price</Form.Label>
@@ -60,7 +115,7 @@ const UpdateToyModal = (props) => {
                     <Button variant="info" type="submit" className='mb-3'>
                         Update
                     </Button>
-                </Form>
+                </Form> */}
             </Modal.Body>
         </Modal>
     );
