@@ -2,14 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, CloseButton, Container, Table } from 'react-bootstrap';
 import useTitle from '../../hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProviders';
-import UpdateToyModal from './UpdateToyModal';
 import Swal from "sweetalert2";
+import MyToysRow from './MyToysRow';
 
 const MyToys = () => {
     useTitle('My toys')
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
-    const [modalShow, setModalShow] = React.useState(false);
     const [control, setControl] = useState(false);
 
     useEffect(() => {
@@ -35,37 +34,37 @@ const MyToys = () => {
     //         });
     // };
 
-    // const handleDelete = id => {
-    //     Swal.fire({
-    //         title: 'Are you sure?',
-    //         text: "You won't be able to revert this!",
-    //         icon: 'warning',
-    //         showCancelButton: true,
-    //         confirmButtonColor: '#3085d6',
-    //         cancelButtonColor: '#d33',
-    //         confirmButtonText: 'Yes, delete it!'
-    //     })
-    //         .then((result) => {
-    //             if (result.isConfirmed) {
-    //                 fetch(`http://localhost:5000/myToys/${id}`, {
-    //                     method: 'DELETE'
-    //                 })
-    //                     .then(res => res.json())
-    //                     .then(data => {
-    //                         console.log(data);
-    //                         if (data.deletedCount > 0) {
-    //                             Swal.fire(
-    //                                 'Deleted!',
-    //                                 'Your Booking has been deleted.',
-    //                                 'success'
-    //                             )
-    //                             const remaining = myToys.filter(booking => booking._id !== id);
-    //                             setMyToys(remaining)
-    //                         }
-    //                     })
-    //             }
-    //         })
-    // }
+    const handleDelete = id => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/myToys/${id}`, {
+                    method: 'DELETE',
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Booking has been deleted.',
+                                'success'
+                            )
+                            const remaining = myToys.filter(toy => toy._id !== id);
+                            setMyToys(remaining);
+                        }
+                    })
+            }
+        })
+    }
 
     return (
         <Container>
@@ -75,6 +74,7 @@ const MyToys = () => {
                 <thead>
                     <tr className='text-center'>
                         <th>Delete</th>
+                        <th>Picture</th>
                         <th>Seller</th>
                         <th>Toy Name</th>
                         <th>Category</th>
@@ -84,31 +84,13 @@ const MyToys = () => {
                     </tr>
                 </thead>
                 <tbody className='text-center'>
-                    {
-                        myToys?.map((toys) => (
-                            <tr key={toys._id}>
-                                <td>
-                                    <CloseButton></CloseButton>
-                                </td>
-                                <td>{toys.name}</td>
-                                <td>{toys.toyName}</td>
-                                <td>{toys.category}</td>
-                                <td>{toys.price}</td>
-                                <td>{toys.quantity}</td>
-                                <td>
-                                    <Button variant="primary" onClick={() => setModalShow(true)}>
-                                        Update
-                                    </Button>
 
-                                    <UpdateToyModal
-                                        show={modalShow}
-                                        onHide={() => setModalShow(false)}
-                                        toys={toys}
-                                        handleToyUpdate={handleToyUpdate}
-                                    />
-                                </td>
-                            </tr>
-                        ))
+                    {
+                        myToys.map(toy => <MyToysRow
+                            key={toy._id}
+                            toy={toy}
+                            handleDelete={handleDelete}
+                        ></MyToysRow>)
                     }
                 </tbody>
             </Table>

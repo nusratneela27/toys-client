@@ -14,21 +14,21 @@ const UpdateToyModal = (props) => {
 
     const { handleToyUpdate } = props;
 
-    // const handle = (event) => {
-    //     event.preventDefault();
-    //     const form = event.target;
-    //     const price = form.price.value;
-    //     const quantity = form.quantity.value;
-    //     const detail = form.detail.value;
-    //     const _id = form._id.value;
-    //     const updateToy = {
-    //         price: price,
-    //         quantity: quantity,
-    //         detail: detail,
-    //         _id: _id
-    //     }
-    //     console.log(updateToy);
-    // }
+    const handle = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const price = form.price.value;
+        const quantity = form.quantity.value;
+        const detail = form.detail.value;
+        const _id = form._id.value;
+        const updateToy = {
+            price: price,
+            quantity: quantity,
+            detail: detail,
+            _id: _id
+        }
+        console.log(updateToy);
+    }
 
     return (
         <Modal

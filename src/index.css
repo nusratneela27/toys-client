@@ -17,3 +17,10 @@
 .borders {
     border: none;
 }
+
+@media screen and (max-width:576px) {
+    .photo {
+        height: 200px;
+        width: 350px;
+    }
+}

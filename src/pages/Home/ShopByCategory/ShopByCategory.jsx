@@ -6,9 +6,10 @@ const ShopByCategory = () => {
 
     const [category, setCategory] = useState([]);
     const [activeTab, setActiveTab] = useState("teddy");
+    const [card] = useState(2)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys/${activeTab}`)
+        fetch(`http://localhost:5000/category/${activeTab}`)
             .then((res) => res.json())
             .then((result) => {
                 setCategory(result);
@@ -54,7 +55,7 @@ const ShopByCategory = () => {
                 {
                     <div className='row row-cols-1 row-cols-md-2'>
                         {
-                            category.map((teddy) => (
+                            category.slice(0, card).map((teddy) => (
                                 <div key={teddy._id}>
                                     <div className="card mb-3 shadow mt-4">
                                         <div className="row g-0">

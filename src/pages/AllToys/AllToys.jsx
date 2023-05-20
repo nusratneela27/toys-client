@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
 import { Button, Container, Form, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const AllToys = () => {
     useTitle('All Toys')
@@ -54,9 +55,11 @@ const AllToys = () => {
                                 <td>{toys.price}</td>
                                 <td>{toys.quantity}</td>
                                 <td>
-                                    <Button variant='info'>
-                                        View Details
-                                    </Button>
+                                    <Link to='/'>
+                                        <Button variant='info'>
+                                            View Details
+                                        </Button>
+                                    </Link>
                                 </td>
                             </tr>
                         ))
