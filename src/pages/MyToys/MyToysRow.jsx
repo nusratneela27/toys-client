@@ -11,12 +11,12 @@ const MyToysRow = ({ toy, handleDelete }) => {
                 <CloseButton onClick={() => handleDelete(_id)}></CloseButton>
             </td>
             <td>
-                <img src={photo} height='50px' width='55px' alt="" />
+                <img src={photo} height='50px' width='55px' alt="" className='rounded' />
             </td>
             <td className='pt-3'>{name}</td>
             <td className='pt-3'>{toyName}</td>
             <td className='pt-3'>{category}</td>
-            <td className='pt-3'>{price}</td>
+            <td className='pt-3'>$ {price}</td>
             <td className='pt-3'>{quantity}</td>
             <td className='pt-3'>
                 <Link to='/toyUpdate'>

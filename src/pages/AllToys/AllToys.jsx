@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useTitle from '../../hooks/useTitle';
-import { Button, Container, Form, Table } from 'react-bootstrap';
+import { Button, Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const AllToys = () => {
@@ -35,6 +35,7 @@ const AllToys = () => {
                 <thead>
                     <tr className='text-center'>
                         <th>#</th>
+                        <th>Picture</th>
                         <th>Seller</th>
                         <th>Toy Name</th>
                         <th>Category</th>
@@ -49,10 +50,13 @@ const AllToys = () => {
                         allToys?.map((toys, index) => (
                             <tr key={toys._id}>
                                 <td>{index + 1}</td>
+                                <td>
+                                    <img src={toys.photo} height='50px' width='55px' alt="" className='rounded' />
+                                </td>
                                 <td>{toys.name}</td>
                                 <td>{toys.toyName}</td>
                                 <td>{toys.category}</td>
-                                <td>{toys.price}</td>
+                                <td>$ {toys.price}</td>
                                 <td>{toys.quantity}</td>
                                 <td>
                                     <Link to='/'>

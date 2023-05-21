@@ -24,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'details/:id',
-                element: <SingleDetails></SingleDetails>,
+                element: <PrivateRoute><SingleDetails></SingleDetails></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://toys-project-server.vercel.app/allToys/${params.id}`)
             },
             {

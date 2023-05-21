@@ -23,23 +23,23 @@ const PhotoShot = () => {
             <p className='text-center fw-semibold'>Check Gallery</p>
             <Row className='d-flex align-items-center mt-5 pt-5 mb-5 mx-auto'>
                 <Col md={3}>
-                    <img src={photo1} alt="" height='437px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-right"
+                    <img src={photo1} alt="" height='437px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-up"
                         data-aos-duration="3000"
                         data-aos-easing="ease-in-sine" />
                 </Col>
                 <Col md={3}>
-                    <img src={photo2} alt="" height='573px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-right"
+                    <img src={photo2} alt="" height='573px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-up"
                         data-aos-duration="3000"
                         data-aos-easing="ease-in-sine" />
                 </Col>
 
                 <Col md={3}>
-                    <img src={photo3} alt="" height='397px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-left"
+                    <img src={photo3} alt="" height='397px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-down"
                         data-aos-duration="3000"
                         data-aos-easing="ease-in-sine" />
                 </Col>
                 <Col md={3}>
-                    <img src={photo4} alt="" height='573px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-left"
+                    <img src={photo4} alt="" height='573px' width='440px' className='pb-5 rounded-4 photo' data-aos="fade-down"
                         data-aos-duration="3000"
                         data-aos-easing="ease-in-sine" />
                 </Col>
