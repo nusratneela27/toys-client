@@ -80,17 +80,6 @@ const UpdateToyModal = (props) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
                 {/* <Form onSubmit={handle(handleToyUpdate)}>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">

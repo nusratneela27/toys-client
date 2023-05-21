@@ -19,11 +19,11 @@ const MyToys = () => {
             })
     }, [user, control])
 
-    // const handleToyUpdate = (data) => {
-    //     fetch(`https://toys-project-server.vercel.app/updateToy/${data._id}`, {
-    //         method: "PATCH",
+    // const handleToyUpdate = (id) => {
+    //     fetch(`https://toys-project-server.vercel.app/myToys/${id}`, {
+    //         method: "PUT",
     //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(data),
+    //         body: JSON.stringify(id),
     //     })
     //         .then(res => res.json())
     //         .then(result => {
@@ -90,6 +90,7 @@ const MyToys = () => {
                             key={toy._id}
                             toy={toy}
                             handleDelete={handleDelete}
+                        // handleToyUpdate={handleToyUpdate}
                         ></MyToysRow>)
                     }
                 </tbody>
