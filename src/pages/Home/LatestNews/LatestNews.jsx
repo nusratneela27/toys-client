@@ -57,7 +57,6 @@ const LatestNews = () => {
             <p className='text-center fw-semibold'>OUR NEWS & EVENTS</p>
             <Slider className='pb-5 mb-5' {...settings}>
 
-
                 <Card className='m-2 borders' >
                     <Card.Img variant="top" src={news1} className='rounded-pill p-4' />
                     <Card.Body>
@@ -94,8 +93,6 @@ const LatestNews = () => {
                         <Card.Title>-- Hello Birthday baby boy</Card.Title>
                     </Card.Body>
                 </Card>
-
-
             </Slider>
 
         </Container>

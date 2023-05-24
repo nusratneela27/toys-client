@@ -17,22 +17,7 @@ const MyToys = () => {
             .then(data => {
                 setMyToys(data);
             })
-    }, [user, control])
-
-    // const handleToyUpdate = (id) => {
-    //     fetch(`https://toys-project-server.vercel.app/myToys/${id}`, {
-    //         method: "PUT",
-    //         headers: { "Content-Type": "application/json" },
-    //         body: JSON.stringify(id),
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             if (result.modifiedCount > 0) {
-    //                 setControl(!control);
-    //             }
-    //             console.log(result);
-    //         });
-    // };
+    }, [user, control]);
 
     const handleDelete = id => {
         Swal.fire({
@@ -90,7 +75,6 @@ const MyToys = () => {
                             key={toy._id}
                             toy={toy}
                             handleDelete={handleDelete}
-                        // handleToyUpdate={handleToyUpdate}
                         ></MyToysRow>)
                     }
                 </tbody>

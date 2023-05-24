@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
-
+import { useNavigate, useParams } from 'react-router-dom';
 import { useContext } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../providers/AuthProviders';
-import Swal from "sweetalert2";
-import useTitle from '../../hooks/useTitle';
 
 const Edit = () => {
     const data = useParams()
@@ -47,9 +44,6 @@ const Edit = () => {
             quantity: quantity,
             detail: detail,
         }
-
-        //https://toys-project-server.vercel.app/
-        //https://toys-project-server.vercel.app/
 
         fetch(`https://toys-project-server.vercel.app/allToys/${initial._id}`, {
             method: 'PUT',

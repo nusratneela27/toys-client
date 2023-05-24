@@ -10,7 +10,6 @@ import AddToy from "../pages/AddToy/AddToy";
 import PrivateRoute from "./PrivateRoute";
 import MyToys from "../pages/MyToys/MyToys";
 import SingleDetails from "../pages/SingleDetails/SingleDetails";
-import UpdateToy from "../pages/MyToys/UpdateToy";
 import Edit from "../pages/Edit/Edit";
 
 const router = createBrowserRouter([
@@ -35,13 +34,7 @@ const router = createBrowserRouter([
             {
                 path: '/toyUpdate/:id',
                 element: <Edit></Edit>,
-                // loader: ({ params }) => fetch(`https://toys-project-server.vercel.app/toyUpdate/${params.id}`)
             },
-            // {
-            //     path: 'toyUpdate',
-            //     element: <UpdateToy></UpdateToy>,
-            //     // loader: ({ params }) => fetch(`https://toys-project-server.vercel.app/toyUpdate/${params.id}`)
-            // },
             {
                 path: 'allToys',
                 element: <AllToys></AllToys>

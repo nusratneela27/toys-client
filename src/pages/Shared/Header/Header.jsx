@@ -20,7 +20,7 @@ const Header = () => {
         </Tooltip>
     )
     return (
-        <Navbar collapseOnSelect expand="lg" bg="info">
+        <Navbar collapseOnSelect expand="lg" className='bg-black bg-opacity-25 z-index-10'>
             <Container>
                 <div className='d-flex align-items-center'>
                     <Navbar.Brand href="/">
